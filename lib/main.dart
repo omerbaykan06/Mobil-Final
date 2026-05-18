@@ -1,122 +1,174 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(BenimUygulamam());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class BenimUygulamam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      title: 'Instagram Klonu',
+      home: InstagramArayuz(), 
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class InstagramArayuz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(
+          "Instagram",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 1,
+        centerTitle: false,
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+        child: SizedBox(
+          width: 500,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 125,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    children: [
+                      
+                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png", "Giresun Üni."),
+                      hikayeKutusu("https://thumbor.evrimagaci.org/xX9moFwB3xbHdWfiDnqL1fFu0ug=/filters:quality(85)/mi/ce9a2069-168c-442f-9169-da47afe12f7e.jpeg", "Barış Özcan"),
+                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/8/8e/Fatma_Deniz_at_Republica25_2025-05-28_06_%28cropped%29.jpg", "Fatma Deniz"),
+                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/b/b2/%C3%96mer_Y%C4%B1ld%C4%B1r%C4%B1m.jpg", "Ömer Yıldırım"),
+                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Ahmet-Akyol-B-transformed.jpg/1920px-Ahmet-Akyol-B-transformed.jpg", "Ahmet Akyol"),
+                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Ipek_Bilgin_at_Berlinale_2026.jpg/960px-Ipek_Bilgin_at_Berlinale_2026.jpg", "İpek Bilgin"),
+                    ],
+                  ),
+                ),
+                Divider(height: 1, color: Colors.grey[300]),
+                
+                GonderiYapisi(
+                  kullanici: "giresun_uni",
+                  gorselUrl: "https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png",
+                ),
+                GonderiYapisi(
+                  kullanici: "ebubekir sifil",
+                  gorselUrl: "https://pbs.twimg.com/profile_images/1185204768731533314/9xp7GXON_400x400.jpg",
+                ),
+                GonderiYapisi(
+                  kullanici: "bora arda",
+                  gorselUrl: "https://picsum.photos/id/237/500/500", 
+                ),
+              ],
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Icon(Icons.home, size: 28),
+            Icon(Icons.search, size: 28),
+            Icon(Icons.add_box_outlined, size: 28),
+            Icon(Icons.favorite_border, size: 28),
+            Icon(Icons.person_outline, size: 28),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  
+  Widget hikayeKutusu(String resim, String isim) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+      child: Column(
+        children: [
+          Container(
+            width: 68,
+            height: 68,
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [Colors.orange, Colors.purple, Colors.red],
+              ),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2),
+                image: DecorationImage(
+                  image: NetworkImage(resim),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 5),
+          Text(
+            isim,
+            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+class GonderiYapisi extends StatefulWidget {
+  final String kullanici;
+  final String gorselUrl;
+  GonderiYapisi({required this.kullanici, required this.gorselUrl});
+  @override
+  _GonderiYapisiState createState() => _GonderiYapisiState();
+}
+
+class _GonderiYapisiState extends State<GonderiYapisi> {
+  bool begendikMi = false;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          child: Text(widget.kullanici, style: TextStyle(fontWeight: FontWeight.bold)),
+        ),
+        Container(
+          width: double.infinity,
+          height: 400,
+          color: Colors.grey[100],
+          child: Image.network(
+            widget.gorselUrl,
+            fit: BoxFit.contain,
+          ),
+        ),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(begendikMi ? Icons.favorite : Icons.favorite_border, color: begendikMi ? Colors.red : Colors.black),
+              onPressed: () => setState(() => begendikMi = !begendikMi),
+            ),
+            IconButton(icon: Icon(Icons.chat_bubble_outline), onPressed: () {}),
+          ],
+        ),
+        Divider(),
+      ],
     );
   }
 }
