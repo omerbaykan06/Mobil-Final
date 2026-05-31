@@ -46,7 +46,7 @@ class InstagramArayuz extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     children: [
-                      
+                      // story lerin profil fotoğrafları ve isimleri burada
                       hikayeKutusu("https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png", "Giresun Üni."),
                       hikayeKutusu("https://thumbor.evrimagaci.org/xX9moFwB3xbHdWfiDnqL1fFu0ug=/filters:quality(85)/mi/ce9a2069-168c-442f-9169-da47afe12f7e.jpeg", "Barış Özcan"),
                       hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/8/8e/Fatma_Deniz_at_Republica25_2025-05-28_06_%28cropped%29.jpg", "Fatma Deniz"),
@@ -57,7 +57,7 @@ class InstagramArayuz extends StatelessWidget {
                   ),
                 ),
                 Divider(height: 1, color: Colors.grey[300]),
-                
+                // Gönderilerin Resimleri ve İsimleri Burada
                 GonderiYapisi(
                   kullanici: "giresun_uni",
                   gorselUrl: "https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png",
@@ -80,6 +80,7 @@ class InstagramArayuz extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+
             Icon(Icons.home, size: 28),
             Icon(Icons.search, size: 28),
             Icon(Icons.add_box_outlined, size: 28),
@@ -90,8 +91,7 @@ class InstagramArayuz extends StatelessWidget {
       ),
     );
   }
-
-  
+// Story'lerin görünümü burada
   Widget hikayeKutusu(String resim, String isim) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
