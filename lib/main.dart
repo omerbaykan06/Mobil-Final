@@ -5,11 +5,15 @@ void main() {
 }
 
 class BenimUygulamam extends StatelessWidget {
+  static const String appName = 'Final Ödev';
+  static const String version = '1.0.0';
+  final String _ogrenciOnayKodu = "MOBIL2026";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Instagram Klonu',
+      title: appName,
       home: InstagramArayuz(), 
     );
   }
@@ -47,7 +51,7 @@ class InstagramArayuz extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     children: [
                       // story lerin profil fotoğrafları ve isimleri burada
-                      hikayeKutusu("https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png", "Giresun Üni."),
+                    hikayeKutusu("https://upload.wikimedia.org/wikipedia/tr/a/ab/Giresun_%C3%9Cniversitesi_Logosu.png", "Giresun Üni."),
                       hikayeKutusu("https://thumbor.evrimagaci.org/xX9moFwB3xbHdWfiDnqL1fFu0ug=/filters:quality(85)/mi/ce9a2069-168c-442f-9169-da47afe12f7e.jpeg", "Barış Özcan"),
                       hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/8/8e/Fatma_Deniz_at_Republica25_2025-05-28_06_%28cropped%29.jpg", "Fatma Deniz"),
                       hikayeKutusu("https://upload.wikimedia.org/wikipedia/commons/b/b2/%C3%96mer_Y%C4%B1ld%C4%B1r%C4%B1m.jpg", "Ömer Yıldırım"),
@@ -56,7 +60,7 @@ class InstagramArayuz extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(height: 1, color: Colors.grey[300]),
+                Container(height: 1, color: Colors.grey[300]),
                 // Gönderilerin Resimleri ve İsimleri Burada
                 GonderiYapisi(
                   kullanici: "giresun_uni",
@@ -80,7 +84,7 @@ class InstagramArayuz extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-
+           // Ana sayfa,Arama,Gönderi,Beğenme,Profil ikonları burada 
             Icon(Icons.home, size: 28),
             Icon(Icons.search, size: 28),
             Icon(Icons.add_box_outlined, size: 28),
@@ -160,15 +164,21 @@ class _GonderiYapisiState extends State<GonderiYapisi> {
         ),
         Row(
           children: [
+            // Beğeni ve yorum butonlarını burada.
+              // Beğeni butonuna basınca beğeni ikonu ve rengi burada
+        
             IconButton(
               icon: Icon(begendikMi ? Icons.favorite : Icons.favorite_border, color: begendikMi ? Colors.red : Colors.black),
+              // Like ikonuna basınca renk değişimi burada
               onPressed: () => setState(() => begendikMi = !begendikMi),
             ),
             IconButton(icon: Icon(Icons.chat_bubble_outline), onPressed: () {}),
           ],
         ),
-        Divider(),
+        
+        Container(height: 1, color: Colors.grey[300]),
       ],
     );
   }
 }
+//  Bu uygulama Mobil Programlama dersi kapsamında geliştirilmiştir
