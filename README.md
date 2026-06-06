@@ -17,4 +17,4 @@
 
 ![Uygulama Ekran Goruntusu](Uygulama%20Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC.png)
 
-![ekrang] (/home/user/myapp/Uygulumama 2.Görüntü.png) 
+![ekrang](Uygulumama%202.G%C3%B6r%C3%BCnt%C3%BC.png) 
